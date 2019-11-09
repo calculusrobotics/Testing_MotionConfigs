@@ -162,6 +162,10 @@ public abstract class BBMotorController {
     protected int loadMotionConfig(int configID, int slot) {
     	MotionConfig config = motionConfigs.get(configID);
     	
+    	if (slotsUsed == MOTION_SLOTS) {
+    		clearMotionSlot(slot);
+    	}
+    	
     	clearMotionSlot(slot);
     	
     	
